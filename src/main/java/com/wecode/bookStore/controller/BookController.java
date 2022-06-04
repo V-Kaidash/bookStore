@@ -22,4 +22,6 @@ public class BookController {
         books.add(book);
          return ResponseEntity.ok(books);
     }
+
+    public ResponseEntity<List<BookDto>> getAuthors();
 }
