@@ -23,5 +23,7 @@ public class BookController {
          return ResponseEntity.ok(books);
     }
 
-    public ResponseEntity<List<BookDto>> getAuthors();
+    public ResponseEntity<List<BookDto>> getAuthors(){
+        return null;
+    }
 }
