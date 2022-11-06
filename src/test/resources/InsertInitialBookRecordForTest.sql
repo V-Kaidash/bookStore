@@ -1,0 +1,1 @@
+INSERT INTO book(id, title, description, release_year) VALUES ('d1147bb5-b1bf-49ae-b73d-004a6e319caf', 'Test Book Title', 'Test Book Description', 2022)

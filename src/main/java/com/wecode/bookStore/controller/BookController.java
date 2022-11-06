@@ -1,31 +1,24 @@
 package com.wecode.bookStore.controller;
 
 import com.wecode.bookStore.dto.BookDto;
+import com.wecode.bookStore.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("api/v1")
 public class BookController {
+    @Autowired
+    private BookService bookService;
 
     @GetMapping("/books")
     public ResponseEntity<List<BookDto>> getBooks() {
-        BookDto book = BookDto.builder()
-                .title("My first book title")
-                .build();
-        BookDto book2 = BookDto.builder()
-                .title("My second book title")
-                .build();
-
-        List<BookDto> books = new ArrayList<>();
-        books.add(book);
-        books.add(book2);
-         return ResponseEntity.ok(books);
+         return ResponseEntity.ok(bookService.getBooks());
     }
 
     public ResponseEntity<List<BookDto>> getAuthors(){
